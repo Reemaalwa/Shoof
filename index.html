@@ -1,49 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head scroll-behavior: smooth; >
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shoof | AI-Powered Assistance</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { opacity: 0; }
-}
-
-/* Cursor styling */
-.blinking-cursor {
-    display: inline-block;
-    animation: blink 0.7s infinite;
-}
-
-/* Stops cursor blinking when typing completes */
-.cursor-stop {
-    animation: none;
-}
-        
+        @keyframes blink { 50% { opacity: 0; } }
+        .blinking-cursor { display: inline-block; animation: blink 0.7s infinite; }
+        .cursor-stop { animation: none; }
     </style>
 </head>
 <body class="bg-gray-300 min-h-screen flex flex-col items-center text-center">
     
-    <!-- Navigation Bar -->
-    <nav class="w-full bg-white shadow-md py-4 px-6 fixed top-0 z-50">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <h2 class="text-2xl font-bold text-blue-600">Shoof</h2>
-            <ul class="flex space-x-6 text-gray-700 text-lg">
-                <li><a href="#how-it-works" class="hover:text-blue-600">How It Works</a></li>
-                <li><a href="#initiative" class="hover:text-blue-600">Our Initiative</a></li>
-                <li><a href="#why-it-matters" class="hover:text-blue-600">Why It Matters</a></li>
-                <li><a href="#founder" class="hover:text-blue-600">Founder</a></li>
-            </ul>
-        </div>
-    </nav>
-    
- <!-- Popup Modal -->
+     <!-- Popup Modal -->
  <div id="popup-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
     <div class="bg-white p-6 rounded-3xl shadow-lg max-w-md text-center">
         <h2 class="text-2xl font-semibold text-black">Stay Updated</h2>
@@ -56,55 +26,69 @@
     </div>
 </div>
 
+    <!-- Navigation Bar -->
+    <nav class="w-full bg-white shadow-md py-4 px-6 fixed top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h2 class="text-2xl font-bold text-blue-600">Shoof</h2>
+            <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">☰</button>
+            <ul id="menu" class="hidden md:flex space-x-6 text-gray-700 text-lg">
+                <li><a href="#how-it-works" class="hover:text-blue-600">How It Works</a></li>
+                <li><a href="#initiative" class="hover:text-blue-600">Our Initiative</a></li>
+                <li><a href="#why-it-matters" class="hover:text-blue-600">Why It Matters</a></li>
+                <li><a href="#founder" class="hover:text-blue-600">Founder</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <!-- Hero Section -->
-    <section class="w-full h-screen flex flex-col items-center justify-center bg-gray-300">
-        <h1 class="text-9xl font-light text-white overflow-hidden whitespace-nowrap border-r-4 border-white typing-effect">
-            Shoof
-        </h1>
-        <p class="text-2xl text-blue-400 mt-4">AI-Powered Assistance for the Visually Impaired</p>
-        <a href="#blip" class="mt-6 inline-block px-20 py-3 bg-blue-700 text-white text-xl font-regular rounded-full shadow-md hover:bg-blue-800">Learn More</a>
+    <section class="w-full h-screen flex flex-col items-center justify-center bg-gray-00 p-6">
+        <h1 class="text-6xl md:text-9xl font-bold text-white">Shoof</h1>
+        <p class="text-xl md:text-2xl text-blue-400 mt-4">AI-Powered Assistance for the Visually Impaired</p>
+        <a href="#blip" class="mt-6 px-10 py-3 bg-blue-700 text-white text-lg md:text-xl rounded-full shadow-md hover:bg-blue-800">Learn More</a>
     </section>
     
     <!-- Main Section -->
-    <section id="blip" class="w-full max-w-7xl text-center px-6 flex flex-col md:flex-row items-center gap-6">
-        <div class="md:w-1/2 text-left">
-            <h2 class="text-3xl font-semibold text-black">Empowering Independence with just a camera.</h2>
-            <p class="mt-4 text-gray-700 text-lg">Shoof is an innovative AI-powered solution designed to assist visually impaired individuals in navigating their daily lives with greater ease and independence.</p>
+    <section id="blip" class="w-full max-w-7xl text-center px-6 flex flex-col md:flex-row items-center gap-6 md:gap-12">
+        <div class="w-full md:w-1/2 order-1 md:order-2">
+            <img src="Iphone1.png" alt="AI Assistance in Action" class="mt-6 mx-auto w-60 md:w-80 lg:w-[700px]">
+        </div>
+        <div class="w-full md:w-1/2 text-left order-2 md:order-1">
+            <h2 class="text-2xl md:text-3xl font-semibold text-black">Empowering Independence with just a camera.</h2>
+            <p class="mt-4 text-gray-700 text-base md:text-lg">Shoof is an innovative AI-powered solution designed to assist visually impaired individuals in navigating their daily lives with greater ease and independence.</p>
             <a href="#" class="stay-updated-btn mt-7 inline-block px-6 py-2 bg-blue-700 text-white text-2xl font-light rounded-full shadow-md hover:bg-blue-800">Stay Updated</a>
         </div>
-        <div class="md:w-1/2">
-            <img src="Iphone1.png" alt="AI Assistance in Action" class="mt-6 mx-auto w-[500px] md:w-[600px] lg:w-[700px]">
+    </section>
+    
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="w-full max-w-7xl px-6 bg-blue-100 rounded-3xl mt-10 flex flex-col md:flex-row items-center gap-6 pb-10">
+        <div class="w-full md:w-1/2 order-1 md:order-2">
+            <img src="Iphone2.png" alt="AI Assistance in Action" class="h-full w-auto object-cover rounded-l-3xl">
+        </div>
+        <div class="w-full md:w-1/2 text-left order-2 md:order-1">
+            <h2 class="text-3xl md:text-5xl font-semibold text-black">How does it work?</h2>
+            <p class="mt-4 text-gray-700 text-base md:text-lg italic">With a simple activation, users unlock a powerful virtual assistant that helps them with everything from selecting color-coordinated outfits to identifying objects, reading labels, and even navigating unfamiliar environments.</p>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="w-full max-w-7xl px-6 bg-blue-100 rounded-3xl mt-10 flex flex-col md:flex-row items-center gap-6">
-        <img src="Iphone2.png" alt="AI Assistance in Action" class="h-full w-auto object-cover rounded-l-3xl">
-        <div class="md:ml-10 text-left">
-            <h2 class="text-5xl font-semibold text-black">How does it work?</h2>
-            <p class="mt-4 text-gray-700 text-lg italic">With a simple activation, users unlock a powerful virtual assistant that helps them with everything from selecting color-coordinated outfits to identifying objects, reading labels, and even navigating unfamiliar environments.</p>
-        </div>
+    <!-- Our Initiative Section -->
+    <section id="initiative" class="w-full max-w-7xl text-center mt-12 rounded-lg p-6">
+        <h2 class="text-3xl md:text-5xl font-semibold text-black">Our Initiative</h2>
+        <p class="mt-4 text-gray-700 text-base md:text-lg italic">At Shoof, we are committed to changing this reality through cutting-edge AI-powered assistance. Our initiative harnesses the power of computer vision and real-time AI guidance to provide instant support, helping blind and visually impaired individuals navigate their world with confidence.</p>
     </section>
     
-    <!-- Our Initiative -->
-    <section id="initiative" class="w-full max-w-7xl text-center mt-12 rounded-lg">
-        <h2 class="text-5xl font-semibold text-black">Our Initiative</h2>
-        <p class="mt-4 text-gray-700 text-xl italic">At Shoof, we are committed to changing this reality through cutting-edge AI-powered assistance. Our initiative harnesses the power of computer vision and real-time AI guidance to provide instant support, helping blind and visually impaired individuals navigate their world with confidence.</p>
-    </section>
-    
-    <!-- Why It Matters -->
-    <section id="why-it-matters" class="w-full max-w-7xl mt-10 grid grid-cols-1 md:grid-cols-2 gap-24">
+    <!-- Why It Matters Section -->
+    <section id="why-it-matters" class="w-full max-w-7xl mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
         <div class="bg-blue-100 p-6 rounded-3xl text-center">
             <h3 class="text-2xl font-semibold text-black">Why It Matters?</h3>
-            <p class="mt-4 text-gray-700 text-lg italic">Independence should be a right, not a privilege. Shoof is more than just technology—it’s a movement towards accessibility, autonomy, and inclusion.</p>
-            <a href="#" class="stay-updated-btn mt-7 inline-block px-6 py-2 bg-blue-700 text-white text-2xl font-light rounded-full shadow-md hover:bg-blue-800">Stay Updated</a>
+            <p class="mt-4 text-gray-700 text-base md:text-lg italic">Independence should be a right, not a privilege. Shoof is more than just technology—it’s a movement towards accessibility, autonomy, and inclusion.</p>
         </div>
         <div class="bg-blue-100 p-6 rounded-3xl text-center">
             <h3 class="text-2xl font-semibold text-black">A Future Without Limits</h3>
-            <p class="mt-4 text-gray-700 text-lg italic">Globally, over 285 million people are visually impaired, with around 39 million classified as blind. For many, simple daily tasks—like selecting an outfit, reading food labels, or navigating a crowded street—can present significant challenges. Accessibility barriers often lead to reduced independence, making it harder to perform everyday activities without assistance.</p>
+            <p class="mt-4 text-gray-700 text-base md:text-lg italic">Globally, over 285 million people are visually impaired, with around 39 million classified as blind. For many, simple daily tasks—like selecting an outfit, reading food labels, or navigating a crowded street—can present significant challenges.</p>
+            <a href="#" class="stay-updated-btn mt-7 inline-block px-6 py-2 bg-blue-700 text-white text-2xl font-light rounded-full shadow-md hover:bg-blue-800">Stay Updated</a>
         </div>
     </section>
-    
+
     <!-- Founder Section -->
     <section id="founder" class="w-full max-w-7xl p-5 px-15 bg-blue-100 rounded-3xl mt-10 flex flex-col md:flex-row items-center gap-6">
         <img src="reemAlwadi.jpg" alt="Reema Alwadi" class="w-80 rounded-lg px-15">
@@ -116,14 +100,13 @@
         </div>
     </section>
     
-    
     <!-- Footer -->
     <footer class="text-center py-6 text-gray-600 mt-8">
         <p>&copy; 2025 Shoof. All Rights Reserved.</p>
     </footer>
-
-<script>
-    // Open Popup
+    
+    <script>
+        // Open Popup
     document.querySelectorAll('.stay-updated-btn').forEach(button => {
         button.addEventListener('click', function () {
             document.getElementById('popup-modal').classList.remove('hidden');
@@ -151,7 +134,6 @@
         document.getElementById('popup-email').value = ""; // Clear input field
         document.getElementById('popup-modal').classList.add('hidden'); // Close popup
     });
-</script>
-
+    </script>
 </body>
 </html>
